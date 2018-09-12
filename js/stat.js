@@ -17,13 +17,13 @@ var COLUMN_MARGIN = 50;
 var COLUMN_COLOR_MY = 'rgba(255, 0, 0, 1)';
 
 // Функция отрисовки облака
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
 // Функция определения максимального значения массива
-var getMaxElement = function(arr) {
+var getMaxElement = function (arr) {
   var maxElement = arr[0];
 
   for (var i = 0; i < arr.length; i++) {
@@ -36,7 +36,7 @@ var getMaxElement = function(arr) {
 };
 
 // Показываем статистику при победе
-window.renderStatistics = function(ctx, names, times) {
+window.renderStatistics = function (ctx, names, times) {
   // Сначала рисуем тень облака со смещением по X и Y
   renderCloud(ctx, CLOUD_X + 10, CLOUD_Y + 10, 'rgba(0, 0, 0, 0.7)');
 
