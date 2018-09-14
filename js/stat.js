@@ -75,4 +75,4 @@ window.renderStatistics = function (ctx, names, times) {
     }
     ctx.fillRect(CLOUD_X + CLOUD_PADDING_LEFT + 20 + columnMargin, CLOUD_Y + CLOUD_HEIGHT - CLOUD_PADDING_BOTTOM - TEXT_HEIGHT - columnHeight, COLUMN_WIDTH, columnHeight);
   }
-}
+};
