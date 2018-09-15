@@ -35,8 +35,15 @@ var getMaxElement = function (arr) {
   return maxElement;
 };
 
+// Функция отрисовки колонки гистограммы
+var columnDraw = function (ctx, columnX, columnY, columnHeight, columnColor) {
+  ctx.fillStyle = columnColor;
+  ctx.fillRect(columnX, columnY - TEXT_HEIGHT - columnHeight, COLUMN_WIDTH, columnHeight);
+};
+
 // Показываем статистику при победе
 window.renderStatistics = function (ctx, names, times) {
+  var cloudPaddingLeft = CLOUD_X + CLOUD_PADDING_LEFT;
   // Сначала рисуем тень облака со смещением по X и Y
   renderCloud(ctx, CLOUD_X + 10, CLOUD_Y + 10, 'rgba(0, 0, 0, 0.7)');
 
@@ -46,8 +53,8 @@ window.renderStatistics = function (ctx, names, times) {
   // Заголовок окна результатов
   ctx.font = '16px PT Mono';
   ctx.fillStyle = '#000';
-  ctx.fillText('Ура вы победили!', CLOUD_X + CLOUD_PADDING_LEFT, CLOUD_Y + CLOUD_PADDING_TOP);
-  ctx.fillText('Список результатов:', CLOUD_X + CLOUD_PADDING_LEFT, CLOUD_Y + CLOUD_PADDING_TOP + 20);
+  ctx.fillText('Ура вы победили!', cloudPaddingLeft, CLOUD_Y + CLOUD_PADDING_TOP);
+  ctx.fillText('Список результатов:', cloudPaddingLeft, CLOUD_Y + CLOUD_PADDING_TOP + 20);
 
   // Получаем максимальный результат массива times
   var maxTime = getMaxElement(times);
@@ -55,6 +62,10 @@ window.renderStatistics = function (ctx, names, times) {
   for (var i = 0; i < names.length; i++) {
     // Вычисляем кординаты X колонки
     var columnMargin = (COLUMN_WIDTH + COLUMN_MARGIN) * i / 1;
+    var columnX = cloudPaddingLeft + 20 + columnMargin;
+
+    // Вычисляем кординаты Y колонки
+    var columnY = CLOUD_Y + CLOUD_HEIGHT - CLOUD_PADDING_BOTTOM;
 
     // Вычисляем высоту колонки
     var columnHeight = Math.round(COLUMN_HEIGHT * Math.round(times[i]) / maxTime);
@@ -63,16 +74,16 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillStyle = '#000';
 
     // Подписи игроков снизу
-    ctx.fillText(names[i], CLOUD_X + CLOUD_PADDING_LEFT + 20 + columnMargin, CLOUD_Y + CLOUD_HEIGHT - CLOUD_PADDING_BOTTOM);
+    ctx.fillText(names[i], columnX, columnY);
 
     // Подписи времени вверху
-    ctx.fillText(Math.round(times[i]), CLOUD_X + CLOUD_PADDING_LEFT + 20 + columnMargin, CLOUD_Y + CLOUD_HEIGHT - CLOUD_PADDING_BOTTOM - TEXT_HEIGHT * 1.5 - columnHeight);
+    ctx.fillText(Math.round(times[i]), columnX, columnY - TEXT_HEIGHT * 1.5 - columnHeight);
 
     // Колонка гистограммы
-    ctx.fillStyle = 'hsl(240, ' + Math.round(Math.random() * 100) + '%, 50%)';
+    var columnColor = 'hsl(240, ' + Math.round(Math.random() * 100) + '%, 50%)';
     if (names[i] === 'Вы') {
-      ctx.fillStyle = COLUMN_COLOR_MY;
+      columnColor = COLUMN_COLOR_MY;
     }
-    ctx.fillRect(CLOUD_X + CLOUD_PADDING_LEFT + 20 + columnMargin, CLOUD_Y + CLOUD_HEIGHT - CLOUD_PADDING_BOTTOM - TEXT_HEIGHT - columnHeight, COLUMN_WIDTH, columnHeight);
+    columnDraw(ctx, columnX, columnY, columnHeight, columnColor);
   }
 };
