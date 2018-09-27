@@ -1,17 +1,5 @@
 'use strict';
 
-// Cкрывает магазин артифактов
-var showArtifactsShop = function () {
-  var artifactsShop = document.querySelector('.setup');
-  artifactsShop.classList.remove('hidden');
-};
-
-// Показывает список похожих волшебников
-var showSimilarWizardsList = function () {
-  var similarWizardsList = document.querySelector('.setup-similar');
-  similarWizardsList.classList.remove('hidden');
-};
-
 // Клонирует волшебника на основе шаблона
 var cloneWizardElement = function (wizardTemplate, wizardObj) {
   var wizard = wizardTemplate.cloneNode(true);
@@ -64,5 +52,8 @@ wizards.forEach(function (wizardObj) {
 var setupSimilarList = document.querySelector('.setup-similar-list');
 setupSimilarList.appendChild(wizardsFragment);
 
-showArtifactsShop();
-showSimilarWizardsList();
+var artifactsShop = document.querySelector('.setup');
+artifactsShop.classList.remove('hidden');
+
+var similarWizardsList = document.querySelector('.setup-similar');
+similarWizardsList.classList.remove('hidden');
