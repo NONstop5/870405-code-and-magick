@@ -1,19 +1,18 @@
 'use strict';
 
-var showArtifactsShop = function (flag) {
+// Cкрывает магазин артифактов
+var showArtifactsShop = function () {
   var artifactsShop = document.querySelector('.setup');
-  if (flag) {
-    artifactsShop.classList.remove('hidden');
-  }
+  artifactsShop.classList.remove('hidden');
 };
 
-var showSimilarWizardsList = function (flag) {
+// Показывает список похожих волшебников
+var showSimilarWizardsList = function () {
   var similarWizardsList = document.querySelector('.setup-similar');
-  if (flag) {
-    similarWizardsList.classList.remove('hidden');
-  }
+  similarWizardsList.classList.remove('hidden');
 };
 
+// Клонирует волшебника на основе шаблона
 var cloneWizardElement = function (wizardTemplate, wizardObj) {
   var wizard = wizardTemplate.cloneNode(true);
   wizard.querySelector('.setup-similar-label').textContent = wizardObj['name'];
@@ -22,6 +21,7 @@ var cloneWizardElement = function (wizardTemplate, wizardObj) {
   return wizard;
 };
 
+// Генерирует случайное число
 var getRandomValue = function (maxValue) {
   return Math.round(Math.random() * maxValue);
 };
@@ -64,5 +64,5 @@ wizards.forEach(function (wizardObj) {
 var setupSimilarList = document.querySelector('.setup-similar-list');
 setupSimilarList.appendChild(wizardsFragment);
 
-showArtifactsShop(true);
-showSimilarWizardsList(true);
+showArtifactsShop();
+showSimilarWizardsList();
