@@ -11,7 +11,7 @@ var cloneWizardElement = function (wizardTemplate, wizardObj) {
 
 // Генерирует случайное число
 var getRandomValue = function (maxValue) {
-  return Math.round(Math.random() * maxValue);
+  return Math.floor(Math.random() * maxValue);
 };
 
 var names = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
@@ -21,24 +21,24 @@ var eyeColors = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var wizards = [
   {
-    'name': names[getRandomValue(names.length - 1)] + ' ' + lastNames[getRandomValue(lastNames.length - 1)],
-    'coatColor': coatColors[getRandomValue(coatColors.length - 1)],
-    'eyesColor': eyeColors[getRandomValue(eyeColors.length - 1)]
+    'name': names[getRandomValue(names.length)] + ' ' + lastNames[getRandomValue(lastNames.length)],
+    'coatColor': coatColors[getRandomValue(coatColors.length)],
+    'eyesColor': eyeColors[getRandomValue(eyeColors.length)]
   },
   {
-    'name': names[getRandomValue(names.length - 1)] + ' ' + lastNames[getRandomValue(lastNames.length - 1)],
-    'coatColor': coatColors[getRandomValue(coatColors.length - 1)],
-    'eyesColor': eyeColors[getRandomValue(eyeColors.length - 1)]
+    'name': names[getRandomValue(names.length)] + ' ' + lastNames[getRandomValue(lastNames.length)],
+    'coatColor': coatColors[getRandomValue(coatColors.length)],
+    'eyesColor': eyeColors[getRandomValue(eyeColors.length)]
   },
   {
-    'name': names[getRandomValue(names.length - 1)] + ' ' + lastNames[getRandomValue(lastNames.length - 1)],
-    'coatColor': coatColors[getRandomValue(coatColors.length - 1)],
-    'eyesColor': eyeColors[getRandomValue(eyeColors.length - 1)]
+    'name': names[getRandomValue(names.length)] + ' ' + lastNames[getRandomValue(lastNames.length)],
+    'coatColor': coatColors[getRandomValue(coatColors.length)],
+    'eyesColor': eyeColors[getRandomValue(eyeColors.length)]
   },
   {
-    'name': names[getRandomValue(names.length - 1)] + ' ' + lastNames[getRandomValue(lastNames.length - 1)],
-    'coatColor': coatColors[getRandomValue(coatColors.length - 1)],
-    'eyesColor': eyeColors[getRandomValue(eyeColors.length - 1)]
+    'name': names[getRandomValue(names.length)] + ' ' + lastNames[getRandomValue(lastNames.length)],
+    'coatColor': coatColors[getRandomValue(coatColors.length)],
+    'eyesColor': eyeColors[getRandomValue(eyeColors.length)]
   }
 ];
 
