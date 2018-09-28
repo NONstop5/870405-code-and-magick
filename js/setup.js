@@ -21,24 +21,24 @@ var eyeColors = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var wizards = [
   {
-    'name': names[getRandomValue(7)] + ' ' + lastNames[getRandomValue(7)],
-    'coatColor': coatColors[getRandomValue(5)],
-    'eyesColor': eyeColors[getRandomValue(4)]
+    'name': names[getRandomValue(names.length - 1)] + ' ' + lastNames[getRandomValue(lastNames.length - 1)],
+    'coatColor': coatColors[getRandomValue(coatColors.length - 1)],
+    'eyesColor': eyeColors[getRandomValue(eyeColors.length - 1)]
   },
   {
-    'name': names[getRandomValue(7)] + ' ' + lastNames[getRandomValue(7)],
-    'coatColor': coatColors[getRandomValue(5)],
-    'eyesColor': eyeColors[getRandomValue(4)]
+    'name': names[getRandomValue(names.length - 1)] + ' ' + lastNames[getRandomValue(lastNames.length - 1)],
+    'coatColor': coatColors[getRandomValue(coatColors.length - 1)],
+    'eyesColor': eyeColors[getRandomValue(eyeColors.length - 1)]
   },
   {
-    'name': names[getRandomValue(7)] + ' ' + lastNames[getRandomValue(7)],
-    'coatColor': coatColors[getRandomValue(5)],
-    'eyesColor': eyeColors[getRandomValue(4)]
+    'name': names[getRandomValue(names.length - 1)] + ' ' + lastNames[getRandomValue(lastNames.length - 1)],
+    'coatColor': coatColors[getRandomValue(coatColors.length - 1)],
+    'eyesColor': eyeColors[getRandomValue(eyeColors.length - 1)]
   },
   {
-    'name': names[getRandomValue(7)] + ' ' + lastNames[getRandomValue(7)],
-    'coatColor': coatColors[getRandomValue(5)],
-    'eyesColor': eyeColors[getRandomValue(4)]
+    'name': names[getRandomValue(names.length - 1)] + ' ' + lastNames[getRandomValue(lastNames.length - 1)],
+    'coatColor': coatColors[getRandomValue(coatColors.length - 1)],
+    'eyesColor': eyeColors[getRandomValue(eyeColors.length - 1)]
   }
 ];
 
