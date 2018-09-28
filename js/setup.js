@@ -44,16 +44,16 @@ var wizards = [
 
 var wizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('div');
 var wizardsFragment = document.createDocumentFragment();
+var setupSimilarList = document.querySelector('.setup-similar-list');
+var artifactsShop = document.querySelector('.setup');
+var similarWizardsList = document.querySelector('.setup-similar');
 
 wizards.forEach(function (wizardObj) {
   wizardsFragment.appendChild(cloneWizardElement(wizardTemplate, wizardObj));
 });
 
-var setupSimilarList = document.querySelector('.setup-similar-list');
 setupSimilarList.appendChild(wizardsFragment);
 
-var artifactsShop = document.querySelector('.setup');
 artifactsShop.classList.remove('hidden');
 
-var similarWizardsList = document.querySelector('.setup-similar');
 similarWizardsList.classList.remove('hidden');
